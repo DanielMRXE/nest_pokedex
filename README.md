@@ -15,4 +15,31 @@ npm i -g @nestjs/cli
 4. Levantar la base de datos
 ```
 docker-compose up -d
+
+5.Clonar el archivo ___.env template___ renombrar la copia a a __.env___
+
+6. Llenar las bases de enterno definidas en el ```.env```
+
+7. Ejeecutar la aplicacion en dev: 
 ```
+nest start --watch
+```
+
+5. Reconstruir la base de datos con la semilla
+```
+http://localhost:3000/api/v2/seed
+```
+
+#Stack usado
+*MongoDb
+*Nest
+
+# Production Build
+1. Crear el archivo ```.env.prod```
+2. Llenar las variables de entorno de produccion 
+3. Crear la nueva imagen 
+```
+docker-compose -f docker-compose.prod.yaml --env-file .env.prod up --build
+```
+
+
